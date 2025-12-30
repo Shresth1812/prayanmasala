@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prayan Spices - Premium Single Origin Spices from India</title>
+    <meta name="description" content="Discover authentic, premium single-origin spices directly sourced from Indian farmers. Pure, fresh, and ethically sourced masalas for your kitchen.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        
+        .container {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            color: white;
+        }
+        
+        .header {
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ff6b35;
+            font-weight: bold;
+            font-size: 24px;
+        }
+        
+        .nav {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+            padding: 10px 15px;
+            border-radius: 25px;
+        }
+        
+        .nav a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 25px;
+            margin-bottom: 30px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background: #4ade80;
+            border-radius: 50%;
+            margin-right: 10px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero h2 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            color: #fef3c7;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            opacity: 0.8;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn {
+            background: white;
+            color: #ff6b35;
+            padding: 18px 35px;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 80px 40px;
+            background: rgba(255,255,255,0.1);
+        }
+        
+        .feature-card {
+            background: rgba(255,255,255,0.2);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.25);
+        }
+        
+        .feature-icon {
+            font-size: 4rem;
+            margin-bottom: 25px;
+            display: block;
+        }
+        
+        .feature-title {
+            font-size: 1.6rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .feature-desc {
+            opacity: 0.9;
+            line-height: 1.5;
+            font-size: 1.1rem;
+        }
+        
+        .products {
+            padding: 80px 40px;
+            background: white;
+            color: #333;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #ff6b35;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 60px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            border: 1px solid #f0f0f0;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: white;
+            position: relative;
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(255,255,255,0.9);
+            color: #ff6b35;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .product-info {
+            padding: 30px;
+        }
+        
+        .product-rating {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            gap: 5px;
+        }
+        
+        .stars {
+            color: #fbbf24;
+        }
+        
+        .rating-text {
+            font-size: 14px;
+            color: #666;
+            margin-left: 10px;
+        }
+        
+        .product-name {
+            font-size: 1.6rem;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #333;
+        }
+        
+        .product-origin {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .product-price {
+            font-size: 1.4rem;
+            color: #ff6b35;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .product-desc {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+        
+        .product-features {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+        
+        .feature-tag {
+            background: #f3f4f6;
+            color: #374151;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+        }
+        
+        .add-to-cart {
+            background: #ff6b35;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        .add-to-cart:hover {
+            background: #e55a2b;
+            transform: translateY(-2px);
+        }
+        
+        .story {
+            padding: 80px 40px;
+            background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 100%);
+            color: #333;
+        }
+        
+        .story-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .story-text h3 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #ff6b35;
+        }
+        
+        .story-text p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        .story-image {
+            text-align: center;
+        }
+        
+        .story-image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .footer {
+            background: #1f2937;
+            color: white;
+            padding: 60px 40px 30px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .footer-desc {
+            line-height: 1.6;
+            opacity: 0.8;
+            margin-bottom: 30px;
+        }
+        
+        .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+        
+        .footer-section h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #ff6b35;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+            color: #ff6b35;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #374151;
+            opacity: 0.6;
+        }
+        
+        .whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 70px;
+            height: 70px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 35px;
+            text-decoration: none;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: all 0.3s;
+        }
+        
+        .whatsapp:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.6);
+        }
+        
+        .whatsapp::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #25D366;
+            border-radius: 50%;
+            animation: ping 2s infinite;
+            opacity: 0.3;
+        }
+        
+        @keyframes ping {
+            0% { transform: scale(1); opacity: 0.3; }
+            100% { transform: scale(1.3); opacity: 0; }
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px;
+            }
+            
+            .nav {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.3rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .features {
+                padding: 60px 20px;
+                grid-template-columns: 1fr;
+            }
+            
+            .products {
+                padding: 60px 20px;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .story {
+                padding: 60px 20px;
+            }
+            
+            .story-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .footer {
+                padding: 40px 20px 20px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <div class="logo-icon">P</div>
+                <div>
+                    <div>Prayan</div>
+                    <div style="font-size: 14px; opacity: 0.8;">Premium Spices</div>
+                </div>
+            </div>
+            <nav class="nav">
+                <a href="#home">Home</a>
+                <a href="#products">Shop</a>
+                <a href="#story">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="badge">
+                <div class="pulse-dot"></div>
+                Farm to Kitchen
+            </div>
+            <h1>Pure. Authentic. Premium.</h1>
+            <h2>Single-Origin Spices from India's Finest Farms</h2>
+            <p>
+                Experience the true essence of Indian spices with our carefully curated collection 
+                sourced directly from heritage farms across India. Every spice tells a story of tradition, 
+                quality, and authentic flavor.
+            </p>
+            <a href="#products" class="btn">Shop Premium Spices</a>
+        </section>
+
+        <!-- Features -->
+        <section class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🔬</div>
+                <h3 class="feature-title">Lab Tested</h3>
+                <p class="feature-desc">Every batch rigorously tested for purity, potency, and safety standards</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🚚</div>
+                <h3 class="feature-title">Free Shipping</h3>
+                <p class="feature-desc">Complimentary shipping on all orders above ₹999 across India</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🏆</div>
+                <h3 class="feature-title">Premium Quality</h3>
+                <p class="feature-desc">Single-origin, Grade A spices with guaranteed freshness</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">❤️</div>
+                <h3 class="feature-title">Fair Trade</h3>
+                <p class="feature-desc">Direct partnerships with farmers ensuring fair wages and sustainability</p>
+            </div>
+        </section>
+
+        <!-- Products -->
+        <section class="products" id="products">
+            <h2 class="section-title">Featured Spices</h2>
+            <p class="section-subtitle">Discover our handpicked selection of premium spices, each with its own story of origin and quality</p>
+            
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <div class="product-badge">Premium</div>
+                        🌸
+                    </div>
+                    <div class="product-info">
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-text">4.9 (127 reviews)</span>
+                        </div>
+                        <h3 class="product-name">Kashmir Saffron</h3>
+                        <p class="product-origin">Origin: Kashmir, India • Harvest: 2024</p>
+                        <div class="product-price">₹2,499 <span style="font-size: 14px; color: #666;">per 1g</span></div>
+                        <p class="product-desc">Premium Grade A saffron threads from the pristine valleys of Kashmir. Known for its deep aroma and vibrant color.</p>
+                        <div class="product-features">
+                            <span class="feature-tag">Lab Tested</span>
+                            <span class="feature-tag">Single Origin</span>
+                            <span class="feature-tag">Grade A</span>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart('Kashmir Saffron')">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <div class="product-badge">Bestseller</div>
+                        ⚫
+                    </div>
+                    <div class="product-info">
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-text">4.8 (89 reviews)</span>
+                        </div>
+                        <h3 class="product-name">Malabar Black Pepper</h3>
+                        <p class="product-origin">Origin: Kerala, India • Harvest: 2024</p>
+                        <div class="product-price">₹899 <span style="font-size: 14px; color: #666;">per 100g</span></div>
+                        <p class="product-desc">Bold and aromatic black pepper from the Malabar coast. Perfect heat balance with intense flavor.</p>
+                        <div class="product-features">
+                            <span class="feature-tag">Organic</span>
+                            <span class="feature-tag">Single Origin</span>
+                            <span class="feature-tag">Fresh Ground</span>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart('Malabar Black Pepper')">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <div class="product-badge">Organic</div>
+                        🟡
+                    </div>
+                    <div class="product-info">
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-text">4.7 (156 reviews)</span>
+                        </div>
+                        <h3 class="product-name">Turmeric Powder</h3>
+                        <p class="product-origin">Origin: Tamil Nadu, India • Harvest: 2024</p>
+                        <div class="product-price">₹299 <span style="font-size: 14px; color: #666;">per 100g</span></div>
+                        <p class="product-desc">Golden turmeric with high curcumin content. Stone-ground to preserve natural oils and nutrients.</p>
+                        <div class="product-features">
+                            <span class="feature-tag">High Curcumin</span>
+                            <span class="feature-tag">Organic</span>
+                            <span class="feature-tag">Stone Ground</span>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart('Turmeric Powder')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Brand Story -->
+        <section class="story" id="story">
+            <div class="story-content">
+                <div class="story-text">
+                    <h3>From Heritage Farms to Your Kitchen</h3>
+                    <p>
+                        Prayan was born from a simple belief: that the incredible diversity and quality of Indian spices deserves to be experienced in its purest form. Our journey began when we discovered that most spices lose their potency and authenticity by the time they reach your kitchen.
+                    </p>
+                    <p>
+                        We decided to change that. By partnering directly with heritage farms across India, we ensure that every spice maintains its original character, aroma, and nutritional value. From the saffron fields of Kashmir to the pepper plantations of Kerala, we work with farmers who have been perfecting their craft for generations.
+                    </p>
+                    <p>
+                        Today, Prayan represents more than just spices – we're a bridge between traditional farming wisdom and modern quality standards, bringing you the authentic taste of India with complete transparency and trust.
+                    </p>
+                </div>
+                <div class="story-image">
+                    <img src="https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Spice farming in India" />
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer" id="contact">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">
+                        <div class="logo-icon">P</div>
+                        <div>
+                            <div>Prayan Spices</div>
+                            <div style="font-size: 14px; opacity: 0.8;">Premium Single-Origin Spices</div>
+                        </div>
+                    </div>
+                    <p class="footer-desc">
+                        Bringing you the finest single-origin spices directly from heritage farms across India. 
+                        Experience authentic flavors with complete transparency and quality assurance.
+                    </p>
+                    <div class="contact-info">
+                        <span>📞</span>
+                        <span>+91-9876543210</span>
+                    </div>
+                    <div class="contact-info">
+                        <span>📧</span>
+                        <span>hello@prayanspices.com</span>
+                    </div>
+                    <div class="contact-info">
+                        <span>🏠</span>
+                        <span>123 Spice Street, Mumbai, Maharashtra 400001, India</span>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Shop</a></li>
+                        <li><a href="#story">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Quality Promise</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Track Order</a></li>
+                        <li><a href="#">Help Center</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2024 Prayan Spices. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </footer>
+
+        <!-- WhatsApp Button -->
+        <a href="https://wa.me/919876543210?text=Hi! I'm interested in Prayan premium spices." 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="whatsapp"
+           title="Chat with us on WhatsApp">
+            💬
+        </a>
+    </div>
+
+    <script>
+        // Add to Cart Function
+        function addToCart(productName) {
+            // Create a more sophisticated notification
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: linear-gradient(135deg, #10b981, #059669);
+                color: white;
+                padding: 15px 25px;
+                border-radius: 10px;
+                box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+                z-index: 10000;
+                font-weight: bold;
+                animation: slideIn 0.3s ease-out;
+            `;
+            notification.innerHTML = `✅ ${productName} added to cart!`;
+            
+            // Add animation keyframes
+            if (!document.querySelector('#notification-styles')) {
+                const style = document.createElement('style');
+                style.id = 'notification-styles';
+                style.textContent = `
+                    @keyframes slideIn {
+                        from { transform: translateX(100%); opacity: 0; }
+                        to { transform: translateX(0); opacity: 1; }
+                    }
+                    @keyframes slideOut {
+                        from { transform: translateX(0); opacity: 1; }
+                        to { transform: translateX(100%); opacity: 0; }
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+            
+            document.body.appendChild(notification);
+            
+            // Remove notification after 3 seconds
+            setTimeout(() => {
+                notification.style.animation = 'slideOut 0.3s ease-in';
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.parentNode.removeChild(notification);
+                    }
+                }, 300);
+            }, 3000);
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255,255,255,0.95)';
+                header.style.color = '#333';
+            } else {
+                header.style.background = 'rgba(255,255,255,0.1)';
+                header.style.color = 'white';
+            }
+        });
+    </script>
+</body>
+</html>

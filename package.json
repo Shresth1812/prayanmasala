@@ -1,15 +1,13 @@
 {
   "name": "prayan-spices",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "Premium Spice E-commerce Website - Static HTML Version",
+  "main": "index.html",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "start": "serve .",
+    "build": "echo 'Static site - no build needed'"
   },
-  "dependencies": {
-    "next": "13.5.6",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
-  }
+  "keywords": ["spice", "ecommerce", "premium", "indian", "masala"],
+  "author": "Prayan Spices",
+  "license": "MIT"
 }
