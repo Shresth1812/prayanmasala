@@ -1,5 +1,3 @@
-'use client'
-import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { FiArrowRight, FiUsers, FiMapPin, FiTrendingUp } from 'react-icons/fi'
 
@@ -11,21 +9,16 @@ export default function BrandStory() {
   ]
 
   return (
-    <section className="section-padding bg-gradient-to-br from-primary-50 to-accent-50">
-      <div className="container-max">
+    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-orange-50 to-yellow-50">
+      <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+          <div>
             <div className="mb-6">
-              <span className="inline-block bg-primary-100 text-primary-800 px-4 py-2 rounded-full text-sm font-medium mb-4">
+              <span className="inline-block bg-orange-100 text-orange-800 px-4 py-2 rounded-full text-sm font-medium mb-4">
                 Our Story
               </span>
               <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-6">
-                From Heritage Farms to Your <span className="text-gradient">Kitchen</span>
+                From Heritage Farms to Your <span className="bg-gradient-to-r from-orange-600 to-orange-800 bg-clip-text text-transparent">Kitchen</span>
               </h2>
             </div>
 
@@ -43,48 +36,34 @@ export default function BrandStory() {
               </p>
             </div>
 
-            {/* Stats */}
             <div className="grid grid-cols-3 gap-6 my-8">
               {stats.map((stat, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="text-center"
-                >
-                  <div className="inline-flex items-center justify-center w-12 h-12 bg-primary-600 text-white rounded-full mb-3">
+                <div key={index} className="text-center">
+                  <div className="inline-flex items-center justify-center w-12 h-12 bg-orange-600 text-white rounded-full mb-3">
                     <stat.icon size={20} />
                   </div>
-                  <div className="text-2xl font-bold text-primary-800 mb-1">
+                  <div className="text-2xl font-bold text-orange-800 mb-1">
                     {stat.number}
                   </div>
                   <div className="text-sm text-gray-600">
                     {stat.label}
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/about" className="btn-primary group">
+              <Link href="/about" className="bg-orange-600 hover:bg-orange-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center">
                 Read Our Full Story
-                <FiArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+                <FiArrowRight className="ml-2" />
               </Link>
-              <Link href="/farmers" className="btn-secondary">
+              <Link href="/farmers" className="bg-white border-2 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300">
                 Meet Our Farmers
               </Link>
             </div>
-          </motion.div>
+          </div>
 
-          {/* Images */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="relative"
-          >
-            {/* Main Image */}
+          <div className="relative">
             <div className="relative z-10">
               <img
                 src="https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
@@ -92,10 +71,9 @@ export default function BrandStory() {
                 className="w-full h-96 object-cover rounded-2xl shadow-2xl"
               />
               
-              {/* Floating Card */}
               <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl max-w-xs">
                 <div className="flex items-center space-x-3 mb-3">
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary-600 to-primary-800 rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-orange-600 to-orange-800 rounded-full flex items-center justify-center">
                     <span className="text-white font-bold">P</span>
                   </div>
                   <div>
@@ -109,15 +87,9 @@ export default function BrandStory() {
               </div>
             </div>
 
-            {/* Background Elements */}
-            <div className="absolute top-8 right-8 w-32 h-32 bg-accent-200 rounded-full opacity-20 -z-10"></div>
-            <div className="absolute -bottom-4 right-12 w-24 h-24 bg-primary-200 rounded-full opacity-30 -z-10"></div>
-            
-            {/* Decorative Spice Elements */}
-            <div className="absolute top-4 left-4 w-3 h-3 bg-yellow-400 rounded-full animate-pulse"></div>
-            <div className="absolute bottom-20 right-4 w-4 h-4 bg-red-400 rounded-full animate-bounce" style={{ animationDelay: '1s' }}></div>
-            <div className="absolute top-1/2 -right-2 w-2 h-2 bg-green-400 rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
-          </motion.div>
+            <div className="absolute top-8 right-8 w-32 h-32 bg-yellow-200 rounded-full opacity-20 -z-10"></div>
+            <div className="absolute -bottom-4 right-12 w-24 h-24 bg-orange-200 rounded-full opacity-30 -z-10"></div>
+          </div>
         </div>
       </div>
     </section>
