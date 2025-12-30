@@ -1,13 +1,4 @@
 {
   "name": "prayan-spices",
-  "version": "1.0.0",
-  "description": "Premium Spice E-commerce Website - Static HTML Version",
-  "main": "index.html",
-  "scripts": {
-    "start": "serve .",
-    "build": "echo 'Static site - no build needed'"
-  },
-  "keywords": ["spice", "ecommerce", "premium", "indian", "masala"],
-  "author": "Prayan Spices",
-  "license": "MIT"
+  "version": "1.0.0"
 }
