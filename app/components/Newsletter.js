@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { FiMail, FiGift, FiTrendingUp, FiBook } from 'react-icons/fi'
-import { toast } from 'react-toastify'
+import { showToast } from '../utils/toast'
 
 export default function Newsletter() {
   const [email, setEmail] = useState('')
@@ -29,7 +29,7 @@ export default function Newsletter() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     if (!email) {
-      toast.error('Please enter your email address')
+      showToast('Please enter your email address', 'error')
       return
     }
 
@@ -42,10 +42,10 @@ export default function Newsletter() {
       // Here you would typically send the email to your newsletter service
       console.log('Newsletter signup:', email)
       
-      toast.success('Welcome to Prayan! Check your email for a special discount.')
+      showToast('Welcome to Prayan! Check your email for a special discount.')
       setEmail('')
     } catch (error) {
-      toast.error('Something went wrong. Please try again.')
+      showToast('Something went wrong. Please try again.', 'error')
     } finally {
       setIsLoading(false)
     }

@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { FiFilter, FiGrid, FiList, FiSearch, FiStar, FiShoppingCart, FiHeart, FiEye } from 'react-icons/fi'
-import { useCart } from '../context/CartContext'
+import { useCart } from '../context/CartProvider'
 import Link from 'next/link'
 
 export default function ShopPage() {

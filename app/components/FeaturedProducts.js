@@ -3,8 +3,8 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { FiStar, FiHeart, FiShoppingCart, FiEye } from 'react-icons/fi'
-import { useCart } from '../context/CartContext'
-import { toast } from 'react-toastify'
+import { useCart } from '../context/CartProvider'
+import { showToast } from '../utils/toast'
 
 export default function FeaturedProducts() {
   const [products, setProducts] = useState([])

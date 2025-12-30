@@ -3,8 +3,8 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { FiMinus, FiPlus, FiTrash2, FiShoppingBag, FiArrowRight, FiTruck, FiShield, FiRefreshCw } from 'react-icons/fi'
-import { useCart } from '../context/CartContext'
-import { toast } from 'react-toastify'
+import { useCart } from '../context/CartProvider'
+import { showToast } from '../utils/toast'
 
 export default function CartPage() {
   const { cartItems, cartTotal, cartCount, updateQuantity, removeFromCart, clearCart } = useCart()
@@ -39,9 +39,9 @@ export default function CartPage() {
     if (promoCodes[promoCode.toUpperCase()]) {
       const discountAmount = Math.round(cartTotal * promoCodes[promoCode.toUpperCase()])
       setDiscount(discountAmount)
-      toast.success(`Promo code applied! You saved ₹${discountAmount}`)
+      showToast(`Promo code applied! You saved ₹${discountAmount}`)
     } else {
-      toast.error('Invalid promo code')
+      showToast('Invalid promo code', 'error')
     }
     
     setIsApplyingPromo(false)
